@@ -3,6 +3,6 @@ import type { Burger } from "@/types/Burger";
 
 export async function getBurgers(): Promise<Burger[]> {
   return new Promise((resolve) => {
-    setTimeout(() => resolve(mockBurgers), 500);
+    setTimeout(() => resolve(mockBurgers), 1200);
   });
 }
