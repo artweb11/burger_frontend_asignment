@@ -1,7 +1,7 @@
 
-import './App.css'
+// import './HomePage.css'
 
-function App() {
+function HomePage() {
 
   return (
     <>
@@ -12,4 +12,4 @@ function App() {
   )
 }
 
-export default App
+export default HomePage
