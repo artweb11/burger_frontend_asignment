@@ -29,21 +29,21 @@ export function Header() {
           </NavLink>
 
           <NavLink
-            to={routes.add}
-            className={({ isActive }) =>
-              isActive ? "text-brand-light mx-4" : "text-brand-lighter mx-4"
-            }
-          >
-            Add yours
-          </NavLink>
-
-          <NavLink
             to={routes.nearby}
             className={({ isActive }) =>
               isActive ? "text-brand-light mx-4" : "text-brand-lighter mx-4"
             }
           >
             Nearby spots
+          </NavLink>
+
+          <NavLink
+            to={routes.add}
+            className={({ isActive }) =>
+              isActive ? "text-brand-light mx-4" : "text-brand-lighter mx-4"
+            }
+          >
+            Add yours
           </NavLink>
         </div>
       </div>

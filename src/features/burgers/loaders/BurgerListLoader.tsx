@@ -13,8 +13,10 @@ export function BurgerListLoader() {
   return (
     <>
       {new Array(6).fill(0).map((_, idx) => (
-        // <Skeleton className="w-full bg-transparent" key={idx}>
-        <Card className="group hover:bg-brand-dark3 transition-colors w-full bg-brand-dark2 cursor-pointer">
+        <Card
+          className="group hover:bg-brand-dark3 transition-colors w-full bg-brand-dark2 cursor-pointer"
+          key={idx}
+        >
           <CardContent className="aspect-1/1 bg-transparent">
             <Skeleton className="aspect-1/1 bg-gray-700 rounded-none"></Skeleton>
           </CardContent>
@@ -36,7 +38,6 @@ export function BurgerListLoader() {
             </Badge>
           </CardFooter>
         </Card>
-        // </Skeleton>
       ))}
     </>
   );

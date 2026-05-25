@@ -19,13 +19,13 @@ export const router = createBrowserRouter([
     children: [{ index: true, element: <BurgersPage /> }],
   },
   {
-    path: routes.add,
-    element: <AppLayout />,
-    children: [{ index: true, element: <AddPage /> }],
-  },
-  {
     path: routes.nearby,
     element: <AppLayout />,
     children: [{ index: true, element: <NearbyPage /> }],
+  },
+  {
+    path: routes.add,
+    element: <AppLayout />,
+    children: [{ index: true, element: <AddPage /> }],
   },
 ]);
