@@ -26,7 +26,7 @@ function BurgersPage() {
         <div className="w-full max-w-4xl flex flex-row justify-between items-center gap-2">
           {isLoading && (
             <>
-              {[0, 1, 2].map((e, idx) => (
+              {[0, 1, 2].map((_, idx) => (
                 <Skeleton className="w-full w-1/3" key={idx}>
                   <Card>
                     <CardHeader>

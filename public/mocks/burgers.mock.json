@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "name": "Classic Burger",
+    "price": 8,
+    "image": "https://www.sourcesplash.com/i/random?q=food&w=600&h=400&ig=1"
+  },
+  {
+    "id": "2",
+    "name": "Cheese Burger",
+    "price": 10,
+    "image": "https://www.sourcesplash.com/i/random?q=food&w=600&h=400&ig=2"
+  },
+  {
+    "id": "3",
+    "name": "Premium Burger",
+    "price": 17,
+    "image": "https://www.sourcesplash.com/i/random?q=food&w=600&h=400&ig=3"
+  }
+]
