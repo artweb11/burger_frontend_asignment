@@ -4,6 +4,7 @@ import { validateResponse } from "@/lib/api/validate-response";
 import type { Burger } from "@/types/Burger";
 
 export async function getBurgers(): Promise<Burger[]> {
+  await new Promise((res) => setTimeout(res, 2000));
   const response = await api.get("/mocks/burgers.mock.json");
 
   return validateResponse(response.data, burgersSchema);

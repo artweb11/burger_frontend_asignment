@@ -1,0 +1,29 @@
+.chrome {
+  background: linear-gradient(
+    145deg,
+    #0f0f10 0%,
+    #1b1c1f 25%,
+    #2a2c30 50%,
+    #1a1b1e 75%,
+    #0e0e0f 100%
+  );
+}
+.chrome:hover {
+  /* background: linear-gradient(
+    145deg,
+    #141416 0%,
+    #24262a 25%,
+    #3a3d43 50%,
+    #24262a 75%,
+    #101013 100%
+  ); */
+  filter: brightness(1.08) contrast(1.09);
+}
+.chrome img {
+  transition: transform 0.4s 0s ease;
+  will-change: transform;
+}
+.chrome:hover img {
+  transform-origin: 50% 50%;
+  transform: scale(1.05);
+}

@@ -1,4 +1,4 @@
-// import './BurgersPage.css'
+import "./BurgersPage.css";
 
 import ImageLoader from "@/components/common/ImageLoader";
 import { Badge } from "@/components/ui/badge";
@@ -13,6 +13,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
+import { BurgerListLoader } from "@/features/burgers/loaders/BurgerListLoader";
 import { useBurgers } from "@/hooks/useBurgers";
 
 function BurgersPage() {
@@ -22,48 +23,43 @@ function BurgersPage() {
 
   return (
     <>
-      <div className="w-screen h-screen flex flex-col justify-center items-center">
-        <h2>Burgers</h2>
-        <div className="w-full container mx-auto grid md:grid-cols-4 sm:grid-cols-2 gap-4">
-          {isLoading && (
-            <>
-              {[0, 1, 2, 3].map((_, idx) => (
-                <Skeleton className="w-full w-1/3" key={idx}>
-                  <Card>
-                    <CardHeader>
-                      <CardTitle className="invisible">&nbsp;</CardTitle>
-                      <CardAction className="invisible">&nbsp;</CardAction>
-                    </CardHeader>
-                    <CardContent className="aspect-16/9 bg-gray-200"></CardContent>
-                    <CardFooter className="flex-col gap-2">
-                      <Skeleton className="w-full bg-gray-200 leading-8 h-full">
-                        &nbsp;
-                      </Skeleton>
-                    </CardFooter>
-                  </Card>
-                </Skeleton>
-              ))}
-            </>
-          )}
+      <div className="w-screen min-h-screen flex flex-col justify-center items-center">
+        <div className="w-full container my-8">
+          <h2 className="text-2xl">Top Burgers</h2>
+        </div>
+
+        <div className="w-full container mx-auto grid md:grid-cols-3 sm:grid-cols-2 gap-8">
+          {isLoading && <BurgerListLoader />}
 
           {data?.map((burger) => (
-            <Card className="w-full" key={burger.id}>
-              <CardHeader>
-                <CardTitle>{burger.name}</CardTitle>
-                <CardDescription>{burger?.description}</CardDescription>
-                <CardAction>{burger.price}</CardAction>
-              </CardHeader>
+            <Card
+              className="group w-full bg-brand-dark2 cursor-pointer chrome"
+              key={burger.id}
+            >
               <CardContent className="aspect-16/9">
                 <ImageLoader
-                  className="w-full aspect-16/9"
+                  className="w-full aspect-1/1"
                   alt={burger.name}
                   src={burger?.image}
                 />
               </CardContent>
-              <CardFooter className="flex flex-row gap-2">
-                <Badge>Taste 9.8</Badge>
-                <Badge>Texture 8.7</Badge>
-                <Badge>Visual 9.2</Badge>
+              <CardHeader>
+                <CardTitle className="min-h-8 text-white text-2xl text-brand-yellow">
+                  {burger.name}
+                </CardTitle>
+                <CardDescription>{burger?.description}</CardDescription>
+                <CardAction>{burger.price}</CardAction>
+              </CardHeader>
+              <CardFooter className="flex flex-row gap-2 bg-transparent border-t-2 border-brand-dark">
+                <Badge className="text-white bg-gray-700">
+                  Taste <span className="text-brand-taste">9.8</span>
+                </Badge>
+                <Badge className="text-white bg-gray-700">
+                  Texture <span className="text-brand-texture">8.7</span>
+                </Badge>
+                <Badge className="text-white bg-gray-700">
+                  Visual <span className="text-brand-visual">9.2</span>
+                </Badge>
               </CardFooter>
             </Card>
           ))}

@@ -1,13 +1,13 @@
-// import './HomePage.css'
+// import './AddPage.css'
 
-function HomePage() {
+function AddPage() {
   return (
     <>
       <div className="w-screen h-screen flex flex-col justify-center items-center bg-brand-dark">
-        <h2>Hello</h2>
+        <h2>Add your burger spot</h2>
       </div>
     </>
   );
 }
 
-export default HomePage;
+export default AddPage;

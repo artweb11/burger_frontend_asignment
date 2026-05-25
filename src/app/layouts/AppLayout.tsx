@@ -5,7 +5,7 @@ export function AppLayout() {
   return (
     <div>
       <Header />
-      <main>
+      <main className="py-12">
         <Outlet />
       </main>
     </div>

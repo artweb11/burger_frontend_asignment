@@ -1,13 +1,13 @@
-// import './HomePage.css'
+// import './NearbyPage.css'
 
-function HomePage() {
+function NearbyPage() {
   return (
     <>
       <div className="w-screen h-screen flex flex-col justify-center items-center bg-brand-dark">
-        <h2>Hello</h2>
+        <h2>Find restaurants near you</h2>
       </div>
     </>
   );
 }
 
-export default HomePage;
+export default NearbyPage;

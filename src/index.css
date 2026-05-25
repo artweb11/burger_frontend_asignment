@@ -6,13 +6,26 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --color-background: #0f172a;
-  --color-foreground: #ffffff;
+  --color-primary: #4f46e5;
+  --color-secondary: #06b6d4;
+  --color-brand: #3b82f6;
+
+  --color-brand-light: #ff5722;
+  --color-brand-lighter: #ffb5a0;
+  --color-brand-yellow: #ffc107;
+  --color-brand-blue: #009ad8;
+  --color-brand-dark: #1a1a1a;
+  --color-brand-dark2: #313030;
+  --color-brand-dark3: #383838;
+  --color-brand-sep: #313131;
+  --color-brand-taste: #fabd00;
+  --color-brand-texture: #86cfff;
+  --color-brand-visual: #ff8b69;
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --background: #1a1a1a;
+  --foreground: #fff;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -43,30 +56,30 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-
   }
 }
 
 #root {
   width: 100%;
-  height: 100%;
+  min-height: 100%;
 }
 
-html, body {
+html,
+body {
   padding: 0;
   margin: 0;
   width: 100%;
-  min-height: 100%;
+  height: 100%;
+  /* min-height: 100%; */
 }
 
 @theme inline {
   --font-heading: var(--font-sans);
-  --font-sans: 'Geist Variable', sans-serif;
+  --font-sans: "Geist Variable", sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -108,8 +121,8 @@ html, body {
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
+  --background: #000;
+  --foreground: #fff;
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
