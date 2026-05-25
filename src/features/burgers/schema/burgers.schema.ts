@@ -5,7 +5,7 @@ export const burgerSchema = z.object({
   name: z.string(),
   description: z.string().optional(),
   price: z.number(),
-  image: z.string().url().optional(),
+  image: z.string().optional(),
 });
 
 export const burgersSchema = z.array(burgerSchema);

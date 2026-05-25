@@ -3,18 +3,48 @@
     "id": "1",
     "name": "Classic Burger",
     "price": 8,
-    "image": "https://www.sourcesplash.com/i/random?q=food&w=600&h=400&ig=1"
+    "image": "burger_images/burger1.png"
   },
   {
     "id": "2",
-    "name": "Cheese Burger",
+    "name": "Chicken Burger",
     "price": 10,
-    "image": "https://www.sourcesplash.com/i/random?q=food&w=600&h=400&ig=2"
+    "image": "burger_images/burger2.png"
   },
   {
     "id": "3",
-    "name": "Premium Burger",
+    "name": "American Cheeseburger",
     "price": 17,
-    "image": "https://www.sourcesplash.com/i/random?q=food&w=600&h=400&ig=3"
+    "image": "burger_images/burger3.png"
+  },
+  {
+    "id": "4",
+    "name": "Double Smash Burger",
+    "price": 17,
+    "image": "burger_images/burger4.png"
+  },
+  {
+    "id": "5",
+    "name": "BBQ Bacon Burger",
+    "price": 17,
+    "image": "burger_images/burger5.png"
+  },
+  {
+    "id": "6",
+    "name": "Spicy Jalapeño Burger",
+    "price": 17,
+    "image": "burger_images/burger6.png"
+  },
+  {
+    "id": "7",
+    "name": "Wagyu Beef Burger",
+    "price": 17,
+    "image": "burger_images/burger7.png"
+  },
+  {
+    "id": "8",
+    "name": "Double Stacked Burger",
+    "price": 17,
+    "image": "burger_images/burger8.png"
   }
 ]

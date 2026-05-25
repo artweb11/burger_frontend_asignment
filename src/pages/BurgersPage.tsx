@@ -1,6 +1,7 @@
 // import './BurgersPage.css'
 
 import ImageLoader from "@/components/common/ImageLoader";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -23,10 +24,10 @@ function BurgersPage() {
     <>
       <div className="w-screen h-screen flex flex-col justify-center items-center">
         <h2>Burgers</h2>
-        <div className="w-full max-w-4xl flex flex-row justify-between items-center gap-2">
+        <div className="w-full container mx-auto grid md:grid-cols-4 sm:grid-cols-2 gap-4">
           {isLoading && (
             <>
-              {[0, 1, 2].map((_, idx) => (
+              {[0, 1, 2, 3].map((_, idx) => (
                 <Skeleton className="w-full w-1/3" key={idx}>
                   <Card>
                     <CardHeader>
@@ -46,7 +47,7 @@ function BurgersPage() {
           )}
 
           {data?.map((burger) => (
-            <Card className="w-full w-1/3" key={burger.id}>
+            <Card className="w-full" key={burger.id}>
               <CardHeader>
                 <CardTitle>{burger.name}</CardTitle>
                 <CardDescription>{burger?.description}</CardDescription>
@@ -59,10 +60,10 @@ function BurgersPage() {
                   src={burger?.image}
                 />
               </CardContent>
-              <CardFooter className="flex-col gap-2">
-                <Button type="submit" className="w-full">
-                  Visit
-                </Button>
+              <CardFooter className="flex flex-row gap-2">
+                <Badge>Taste 9.8</Badge>
+                <Badge>Texture 8.7</Badge>
+                <Badge>Visual 9.2</Badge>
               </CardFooter>
             </Card>
           ))}
