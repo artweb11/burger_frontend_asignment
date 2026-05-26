@@ -1,10 +1,12 @@
 // import './HomePage.css'
 
+import BurgerHero from "@/features/burgerHero/BurgerHero";
+
 function HomePage() {
   return (
     <>
-      <div className="w-screen h-screen flex flex-col justify-center items-center bg-brand-dark">
-        <h2>Hello</h2>
+      <div className="w-screen h-screen flex flex-col justify-start items-center bg-brand-dark">
+        <BurgerHero />
       </div>
     </>
   );
