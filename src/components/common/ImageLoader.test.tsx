@@ -1,20 +1,20 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import ImageLoader from "./ImageLoader";
 
 describe("ImageLoader", () => {
   it("renders the image", () => {
-    render(<ImageLoader src="/test.jpg" alt="test-image" />);
+    render(<ImageLoader src="/favicon.svg" alt="test-image" />);
 
     const image = screen.getByAltText("test-image");
 
     expect(image).toBeInTheDocument();
-    expect(image).toHaveAttribute("src", "/test.jpg");
+    expect(image).toHaveAttribute("src", "/favicon.svg");
   });
 
   it("shows spinner while loading", () => {
     const { container } = render(
-      <ImageLoader src="/test.jpg" alt="test-image" />,
+      <ImageLoader src="/favicon.svg" alt="test-image" />,
     );
 
     // spinner exists initially
@@ -23,9 +23,9 @@ describe("ImageLoader", () => {
     expect(spinner).toBeInTheDocument();
   });
 
-  it("hides spinner after image loads", () => {
+  it("hides spinner after image loads", async () => {
     const { container } = render(
-      <ImageLoader src="/test.jpg" alt="test-image" />,
+      <ImageLoader src="/favicon.svg" alt="test-image" />,
     );
 
     const image = screen.getByAltText("test-image");
@@ -35,18 +35,28 @@ describe("ImageLoader", () => {
 
     const spinner = container.querySelector(".animate-spin");
 
-    expect(spinner).not.toBeInTheDocument();
+    await waitFor(
+      () => {
+        expect(spinner).not.toBeInTheDocument();
+      },
+      { timeout: 1000 },
+    );
   });
 
-  it("shows image after load", () => {
-    render(<ImageLoader src="/test.jpg" alt="test-image" />);
+  it("shows image after load", async () => {
+    render(<ImageLoader src="/favicon.svg" alt="test-image" />);
 
     const image = screen.getByAltText("test-image");
 
     fireEvent.load(image);
 
-    expect(image).toHaveClass("opacity-100");
-    expect(image).not.toHaveClass("opacity-0");
+    await waitFor(
+      () => {
+        expect(image).toHaveClass("opacity-100");
+        expect(image).not.toHaveClass("opacity-0");
+      },
+      { timeout: 1000 },
+    );
   });
 
   it("shows error message when image fails to load", () => {
@@ -60,7 +70,7 @@ describe("ImageLoader", () => {
     expect(screen.getByText("Failed to load")).toBeInTheDocument();
   });
 
-  it("hides spinner when image fails to load", () => {
+  it("hides spinner when image fails to load", async () => {
     const { container } = render(
       <ImageLoader src="/bad.jpg" alt="broken-image" />,
     );
@@ -71,12 +81,21 @@ describe("ImageLoader", () => {
 
     const spinner = container.querySelector(".animate-spin");
 
-    expect(spinner).not.toBeInTheDocument();
+    await waitFor(
+      () => {
+        expect(spinner).not.toBeInTheDocument();
+      },
+      { timeout: 1000 },
+    );
   });
 
   it("applies custom className", () => {
     const { container } = render(
-      <ImageLoader src="/test.jpg" alt="test-image" className="rounded-xl" />,
+      <ImageLoader
+        src="/favicon.svg"
+        alt="test-image"
+        className="rounded-xl"
+      />,
     );
 
     expect(container.firstChild).toHaveClass("rounded-xl");
