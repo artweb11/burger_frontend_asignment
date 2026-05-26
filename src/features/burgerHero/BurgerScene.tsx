@@ -148,7 +148,7 @@ const BurgerScene = () => {
       <Environment preset="night" environmentIntensity={0.1} />
       <Lights />
       <BurgerModel
-        scale={[1.8, 1.4, 1.8]}
+        scale={window.innerWidth < 768 ? [1.2, 1, 1.2] : [1.8, 1.4, 1.8]}
         position={[0, -1, 0]}
         rotation={[0, 0, 0]}
         controlsRef={controlsRef}
