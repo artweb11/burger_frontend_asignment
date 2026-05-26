@@ -10,11 +10,14 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card";
+import { BurgerSpot } from "./BurgerSpot";
+import type { TopBurger } from "@/types/TopBurger";
 
-export default function TopCard({ burger }: { burger: any }) {
+export default function TopCard({ burger }: { burger: TopBurger }) {
   return (
     <Link to={`/burgers/${burger.id}`}>
-      <Card className="group w-full bg-brand-dark2 cursor-pointer chrome">
+      <Card className="group w-full bg-brand-dark2 cursor-pointer chrome relative">
+        <BurgerSpot spot={burger.spot} />
         <CardContent className="aspect-16/9">
           <ImageLoader
             className="w-full aspect-1/1 top-burger-image"

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, type JSX } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import {
   useGLTF,
@@ -11,7 +11,11 @@ import gsap from "gsap";
 import { EffectComposer, DepthOfField } from "@react-three/postprocessing";
 import type { Mesh, Object3D, SpotLight } from "three";
 
-function BurgerModel(props: any) {
+type BurgerModelProps = {
+  controlsRef: React.RefObject<any>;
+} & JSX.IntrinsicElements["group"];
+
+function BurgerModel(props: BurgerModelProps) {
   const refs = useRef<Mesh[]>([]);
   const burgerRef = useRef(null);
 
@@ -157,7 +161,7 @@ const BurgerScene = () => {
         maxDistance={8}
         ref={controlsRef}
       />
-      {/* 🎯 DOF postprocessing */}
+      {/* DOF postprocessing */}
       <EffectComposer>
         <DepthOfField
           focusDistance={4.2} // where focus starts
