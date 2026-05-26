@@ -1,0 +1,90 @@
+[
+  {
+    "id": "4",
+    "spot": 1,
+    "name": "Double Smash Burger",
+    "price": 17,
+    "image": "burger_images/burger4.png",
+    "description": "Two smashed beef patties, cheddar cheese, lettuce, tomato, and our special sauce on a toasted bun.",
+    "taste": 9.8,
+    "texture": 9.5,
+    "visual": 9.7
+  },
+  {
+    "id": "7",
+    "spot": 2,
+    "name": "Wagyu Beef Burger",
+    "price": 17,
+    "image": "burger_images/burger7.png",
+    "description": "Juicy wagyu beef patty, caramelized onions, blue cheese, and arugula on a brioche bun.",
+    "taste": 9.9,
+    "texture": 9.6,
+    "visual": 9.8
+  },
+  {
+    "id": "1",
+    "spot": 3,
+    "name": "Classic Burger",
+    "price": 8,
+    "image": "burger_images/burger1.png",
+    "description": "A timeless favorite with a juicy beef patty, lettuce, tomato, pickles, and our signature sauce on a sesame seed bun.",
+    "taste": 8,
+    "texture": 7,
+    "visual": 6
+  },
+  {
+    "id": "2",
+    "spot": 4,
+    "name": "Chicken Burger",
+    "price": 10,
+    "image": "burger_images/burger2.png",
+    "description": "Grilled chicken breast, lettuce, tomato, and mayo on a soft bun for a lighter option.",
+    "taste": 7,
+    "texture": 6,
+    "visual": 5
+  },
+  {
+    "id": "3",
+    "spot": 5,
+    "name": "American Cheeseburger",
+    "price": 17,
+    "image": "burger_images/burger3.png",
+    "description": "A classic with a juicy beef patty, melted American cheese, lettuce, tomato, and our signature sauce on a sesame seed bun.",
+    "taste": 6.7,
+    "texture": 7,
+    "visual": 6
+  },
+  {
+    "id": "5",
+    "spot": 6,
+    "name": "BBQ Bacon Burger",
+    "price": 17,
+    "image": "burger_images/burger5.png",
+    "description": "A smoky delight with a beef patty, crispy bacon, BBQ sauce, cheddar cheese, lettuce, and tomato on a sesame seed bun.",
+    "taste": 7,
+    "texture": 6,
+    "visual": 4
+  },
+  {
+    "id": "6",
+    "spot": 7,
+    "name": "Spicy Jalapeño Burger",
+    "price": 17,
+    "image": "burger_images/burger6.png",
+    "description": "A fiery option with a spicy jalapeño slice, lettuce, tomato, and our signature sauce on a sesame seed bun.",
+    "taste": 8,
+    "texture": 5,
+    "visual": 6.5
+  },
+  {
+    "id": "8",
+    "spot": 8,
+    "name": "Double Stacked Burger",
+    "price": 17,
+    "image": "burger_images/burger8.png",
+    "description": "Two beef patties, melted cheese, lettuce, tomato, and our signature sauce on a sesame seed bun.",
+    "taste": 8.5,
+    "texture": 6.5,
+    "visual": 7
+  }
+]

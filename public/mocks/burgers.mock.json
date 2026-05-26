@@ -3,48 +3,72 @@
     "id": "1",
     "name": "Classic Burger",
     "price": 8,
-    "image": "burger_images/burger1.png"
+    "image": "burger_images/burger1.png",
+    "taste": 8,
+    "texture": 7,
+    "visual": 6
   },
   {
     "id": "2",
     "name": "Chicken Burger",
     "price": 10,
-    "image": "burger_images/burger2.png"
+    "image": "burger_images/burger2.png",
+    "taste": 7,
+    "texture": 6,
+    "visual": 5
   },
   {
     "id": "3",
     "name": "American Cheeseburger",
     "price": 17,
-    "image": "burger_images/burger3.png"
+    "image": "burger_images/burger3.png",
+    "taste": 8,
+    "texture": 7,
+    "visual": 6
   },
   {
     "id": "4",
     "name": "Double Smash Burger",
     "price": 17,
-    "image": "burger_images/burger4.png"
+    "image": "burger_images/burger4.png",
+    "taste": 8,
+    "texture": 7,
+    "visual": 6
   },
   {
     "id": "5",
     "name": "BBQ Bacon Burger",
     "price": 17,
-    "image": "burger_images/burger5.png"
+    "image": "burger_images/burger5.png",
+    "taste": 7,
+    "texture": 6,
+    "visual": 4
   },
   {
     "id": "6",
     "name": "Spicy Jalapeño Burger",
     "price": 17,
-    "image": "burger_images/burger6.png"
+    "image": "burger_images/burger6.png",
+    "taste": 9,
+    "texture": 5,
+    "visual": 6.5
   },
   {
     "id": "7",
     "name": "Wagyu Beef Burger",
     "price": 17,
-    "image": "burger_images/burger7.png"
+    "image": "burger_images/burger7.png",
+    "taste": 9.2,
+    "texture": 7.7,
+    "visual": 8
   },
   {
     "id": "8",
     "name": "Double Stacked Burger",
     "price": 17,
-    "image": "burger_images/burger8.png"
+    "image": "burger_images/burger8.png",
+    "taste": 8.5,
+    "texture": 6.5,
+    "visual": 7
   }
 ]

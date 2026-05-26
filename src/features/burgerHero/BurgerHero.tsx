@@ -6,7 +6,7 @@ import "./BurgerHero.css";
 
 export default function BurgerHero() {
   return (
-    <div className="w-full hero h-1/2 bg-black relative">
+    <div className="w-full hero h-[60vh] bg-black relative">
       <BurgerScene />
       <div className="absolute bottom-0 w-full mx-auto flex flex-col justify-center items-center py-20">
         <h2 className="text-5xl font-bold text-white centered">

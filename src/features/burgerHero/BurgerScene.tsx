@@ -1,22 +1,24 @@
 import { useEffect, useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import {
   useGLTF,
   OrbitControls,
   Environment,
   //   useHelper,
 } from "@react-three/drei";
-import * as THREE from "three";
+// import * as THREE from "three";
 import gsap from "gsap";
 import { EffectComposer, DepthOfField } from "@react-three/postprocessing";
+import type { Mesh, Object3D, SpotLight } from "three";
 
 function BurgerModel(props: any) {
-  const refs = useRef<THREE.Mesh[]>([]);
+  const refs = useRef<Mesh[]>([]);
   const burgerRef = useRef(null);
+
+  const { camera } = useThree();
 
   // Load separate GLB files
   const bunTop = useGLTF("/models/bun_up.gltf");
-  // const seeds = useGLTF("/models/seeds.gltf");
   const bunBottom = useGLTF("/models/bun_down.gltf");
   const salad = useGLTF("/models/salad.gltf");
   const patty = useGLTF("/models/patty.gltf");
@@ -29,6 +31,7 @@ function BurgerModel(props: any) {
     }
     refs.current.forEach((obj, i) => {
       if (!obj) return;
+      if (i < 3) return;
 
       //   if (i === 5) {
       //     window.obj = obj.children[0];
@@ -38,15 +41,36 @@ function BurgerModel(props: any) {
       gsap.to(obj.position, {
         y: 0,
         duration: 1.7,
-        delay: 0.4 + i * 0.25,
+        delay: 1 + i * 0.25,
         ease: "power3.Out",
       });
+    });
+
+    const controls = props.controlsRef.current;
+
+    // const target = { x: 0, y: 190, z: 0 }; // start from above
+
+    // set initial state
+    camera.position.set(0, 190, 0);
+    controls.target.set(0, 0, 0);
+    controls.update();
+
+    gsap.to(camera.position, {
+      x: 0,
+      y: 20,
+      z: 86,
+      duration: 4.5,
+      ease: "power1.in",
+      delay: 0.5,
+      onUpdate: () => {
+        controls.update();
+      },
     });
   }, [refs]);
 
   useFrame((_, delta) => {
     if (burgerRef.current)
-      (burgerRef.current as THREE.Object3D).rotation.y += delta * 0.06;
+      (burgerRef.current as Object3D).rotation.y += delta * 0.06;
   });
 
   return (
@@ -54,46 +78,46 @@ function BurgerModel(props: any) {
       {/* Bottom Bun */}
       <primitive
         object={bunBottom.scene}
-        position={[0, 20, 0]}
-        ref={(el) => (refs.current[0] = el)}
+        position={[0, 0, 0]}
+        ref={(el: Mesh) => (refs.current[0] = el)}
       />
       {/* Salad */}
       <primitive
         object={salad.scene}
-        position={[0, 20, 0]}
-        ref={(el) => (refs.current[1] = el)}
+        position={[0, 0, 0]}
+        ref={(el: Mesh) => (refs.current[1] = el)}
       />
       {/* Patty */}
       <primitive
         object={patty.scene}
         position={[0, 0, 0]}
-        ref={(el) => (refs.current[2] = el)}
+        ref={(el: Mesh) => (refs.current[2] = el)}
       />
       {/* Cheese */}
       <primitive
         object={cheese.scene}
-        position={[0, 20, 0]}
+        position={[0, 40, 0]}
         scale={[0.94, 1, 0.94]}
-        ref={(el) => (refs.current[3] = el)}
+        ref={(el: Mesh) => (refs.current[3] = el)}
       />
       {/* Tomatoes */}
       <primitive
         object={tomatoes.scene}
-        position={[0, 20, 0]}
-        ref={(el) => (refs.current[4] = el)}
+        position={[0, 40, 0]}
+        ref={(el: Mesh) => (refs.current[4] = el)}
       />
       {/* Top Bun */}
       <primitive
         object={bunTop.scene}
-        position={[0, 20, 0]}
-        ref={(el) => (refs.current[5] = el)}
+        position={[0, 40, 0]}
+        ref={(el: Mesh) => (refs.current[5] = el)}
       />
     </group>
   );
 }
 
 const Lights = () => {
-  const lightRef = useRef<THREE.SpotLight>(null!);
+  const lightRef = useRef<SpotLight>(null!);
   // useHelper(lightRef, THREE.SpotLightHelper, 'red')
 
   return (
@@ -109,8 +133,10 @@ const Lights = () => {
 };
 
 const BurgerScene = () => {
+  const controlsRef = useRef(null);
+
   return (
-    <Canvas camera={{ position: [0, 20, 86], fov: 60 }}>
+    <Canvas camera={{ position: [0, 190, 0], fov: 60 }}>
       <color attach="background" args={["#000000"]} />
       {/* <ambientLight intensity={0.1} /> */}
       {/* <directionalLight position={[0, 0, 20]} intensity={1.404} /> */}
@@ -121,10 +147,16 @@ const BurgerScene = () => {
         scale={[1.8, 1.4, 1.8]}
         position={[0, -1, 0]}
         rotation={[0, 0, 0]}
+        controlsRef={controlsRef}
       />
 
       {/* Camera Controls */}
-      <OrbitControls enablePan={true} minDistance={3} maxDistance={8} />
+      <OrbitControls
+        enablePan={true}
+        minDistance={3}
+        maxDistance={8}
+        ref={controlsRef}
+      />
       {/* 🎯 DOF postprocessing */}
       <EffectComposer>
         <DepthOfField

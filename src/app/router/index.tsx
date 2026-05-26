@@ -6,6 +6,7 @@ import BurgersPage from "@/pages/BurgersPage";
 import { routes } from "./routes";
 import AddPage from "@/pages/AddPage";
 import NearbyPage from "@/pages/NearbyPage";
+import BurgerPage from "@/pages/BurgerPage";
 
 export const router = createBrowserRouter([
   {
@@ -27,5 +28,10 @@ export const router = createBrowserRouter([
     path: routes.add,
     element: <AppLayout />,
     children: [{ index: true, element: <AddPage /> }],
+  },
+  {
+    path: routes.burger,
+    element: <AppLayout />,
+    children: [{ index: true, element: <BurgerPage /> }],
   },
 ]);

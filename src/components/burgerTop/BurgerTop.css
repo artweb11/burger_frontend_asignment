@@ -1,0 +1,7 @@
+.chrome .top-burger-image img {
+  transform-origin: 50% 50%;
+  transform: scale(1.4);
+}
+.chrome:hover .top-burger-image img {
+  transform: scale(1.5);
+}
