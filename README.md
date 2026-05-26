@@ -74,3 +74,10 @@ react-three/fiber
 react-three/drei
 react-three/postprocessing
 ```
+
+## AI tooling
+
+I have used Google Stitch to create inspiration for a design for this frontend. The design can be seen here:
+https://stitch.withgoogle.com/projects/6331707393307073262
+
+I have used ChatGPT for burger prompts, Nano Banana for burger image generation, PatinaAI for 3d PBR textures, Blender for 3d modelling
