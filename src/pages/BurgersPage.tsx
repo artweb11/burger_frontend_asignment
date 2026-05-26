@@ -17,7 +17,7 @@ function BurgersPage() {
           <h2 className="text-2xl">Top Burgers</h2>
         </div>
 
-        <div className="w-full px-4 sm:px-0 container mx-auto grid md:grid-cols-3 sm:grid-cols-2 gap-8">
+        <div className="w-full px-4 sm:px-0 container mx-auto grid md:grid-cols-3 sm:grid-cols-2 gap-8 auto-rows-fr">
           {isLoading && <BurgerListLoader />}
 
           {data?.map((burger) => (

@@ -15,8 +15,8 @@ import type { TopBurger } from "@/types/TopBurger";
 
 export default function TopCard({ burger }: { burger: TopBurger }) {
   return (
-    <Link to={`/burgers/${burger.id}`}>
-      <Card className="group w-full bg-brand-dark2 cursor-pointer chrome relative">
+    <Card className="group w-full bg-brand-dark2 cursor-pointer chrome relative">
+      <Link to={`/burgers/${burger.id}`} className="block">
         <BurgerSpot spot={burger.spot} />
         <CardContent className="aspect-16/9">
           <ImageLoader
@@ -43,7 +43,7 @@ export default function TopCard({ burger }: { burger: TopBurger }) {
             Visual <span className="text-brand-visual">9.2</span>
           </Badge>
         </CardFooter>
-      </Card>
-    </Link>
+      </Link>
+    </Card>
   );
 }

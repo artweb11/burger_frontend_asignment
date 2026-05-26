@@ -12,7 +12,7 @@ export default function BurgerHero() {
         <h2 className="text-5xl font-bold text-white centered">
           Find your perfect burger
         </h2>
-        <div className="rounded-4 bg-[#262424] w-2/6 mt-8 flex flex-row justify-center items-center p-4 rounded rounded-md border border-[#31302F]">
+        <div className="rounded-4 bg-[#262424] w-full sm:w-2/6 mt-8 flex flex-row justify-center items-center p-4 rounded rounded-md border border-[#31302F]">
           <div className="flex w-full max-w-2xl items-center gap-2">
             <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#DEBAAF]" />

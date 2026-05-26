@@ -6,7 +6,15 @@ import { TopBurgerLoader } from "@/features/burgers/loaders/TopBurgerLoader";
 export default function BurgerTop() {
   const { data, isLoading, error } = useTopBurgers();
 
-  if (error) return <div>Something went wrong</div>;
+  if (error)
+    return (
+      <div className="flex flex-row">
+        Something went wrong <br />
+        <textarea className="w-full h-48">
+          {JSON.stringify(error, null, 4)}
+        </textarea>
+      </div>
+    );
 
   return (
     <div className="w-full px-4 sm:px-0 min-h-screen flex flex-col items-center justify-start -m-24 z-10 pb-24">
