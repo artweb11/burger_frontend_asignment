@@ -9,7 +9,7 @@ export default function BurgerTop() {
   if (error) return <div>Something went wrong</div>;
 
   return (
-    <div className="w-full min-h-screen flex flex-col items-center justify-start -m-24 z-10 pb-24">
+    <div className="w-full px-4 sm:px-0 min-h-screen flex flex-col items-center justify-start -m-24 z-10 pb-24">
       <div className="container mx-auto py-4">
         <h1 className="text-2xl font-bold text-brand-light">Top Burgers</h1>
       </div>

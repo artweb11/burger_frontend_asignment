@@ -6,7 +6,7 @@ function AddPage() {
   return (
     <>
       <div className="w-screen min-h-screen flex flex-col justify-start items-center bg-brand-dark">
-        <div className="w-full container max-w-6xl pt-14">
+        <div className="w-full px-4 sm:px-0 container max-w-6xl pt-14">
           <h2 className="text-2xl mb-8">Add your burger spot</h2>
 
           <BurgerForm />
