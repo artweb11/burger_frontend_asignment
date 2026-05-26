@@ -37,7 +37,9 @@ export default function ImageLoader({
         className={`w-full h-full object-cover transition-opacity duration-300 ${
           loading ? "opacity-0" : "opacity-100"
         }`}
-        onLoad={() => setLoading(false)}
+        onLoad={() =>
+          setTimeout(() => setLoading(false), ~~(200 + Math.random() * 500))
+        } // Simulate loading time
         onError={() => {
           setLoading(false);
           setError(true);

@@ -3,6 +3,7 @@ import "./BurgersPage.css";
 import ImageLoader from "@/components/common/ImageLoader";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
 import {
   Card,
   CardAction,
@@ -12,9 +13,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Skeleton } from "@/components/ui/skeleton";
 import { BurgerListLoader } from "@/features/burgers/loaders/BurgerListLoader";
 import { useBurgers } from "@/hooks/useBurgers";
+import { Pagination } from "@/components/ui/pagination";
 
 function BurgersPage() {
   const { data, isLoading, error } = useBurgers();
@@ -63,6 +64,10 @@ function BurgersPage() {
               </CardFooter>
             </Card>
           ))}
+        </div>
+
+        <div className="container flex flex-row justify-start items-center mt-12 gap-2">
+          <Pagination />
         </div>
       </div>
     </>
