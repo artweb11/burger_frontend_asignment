@@ -22,36 +22,36 @@ nodejs stable 24.14.1 ( nvm use stable )
 
 A simple backend can be created for the burgers api:
 
-```js
-import { Hono } from 'hono'
-import burgers from './data/burgers.json'
-import topBurgers from './data/top-burgers.json'
+```ts
+import { Hono } from "hono";
+import burgers from "./data/burgers.json";
+import topBurgers from "./data/top-burgers.json";
 
-const app = new Hono()
+const app = new Hono();
 
 // GET /burgers
-app.get('/burgers', (c) => {
-return c.json(burgers)
-})
+app.get("/burgers", (c) => {
+  return c.json(burgers);
+});
 
 // GET /top-burgers
-app.get('/top-burgers', (c) => {
-return c.json(topBurgers)
-})
+app.get("/top-burgers", (c) => {
+  return c.json(topBurgers);
+});
 
 // GET /burgers/:id
-app.get('/burgers/:id', (c) => {
-const id = c.req.param('id')
-const burger = (burgers as any[]).find(b => b.id === id)
+app.get("/burgers/:id", (c) => {
+  const id = c.req.param("id");
+  const burger = (burgers as any[]).find((b) => b.id === id);
 
-if (!burger) {
-return c.json({ error: 'Burger not found' }, 404)
-}
+  if (!burger) {
+    return c.json({ error: "Burger not found" }, 404);
+  }
 
-return c.json(burger)
-})
+  return c.json(burger);
+});
 
-export default app
+export default app;
 ```
 
 ## Architecture & libraries
