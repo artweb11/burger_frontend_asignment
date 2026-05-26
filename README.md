@@ -82,11 +82,13 @@ https://stitch.withgoogle.com/projects/6331707393307073262
 
 I have used ChatGPT for burger prompts, Nano Banana for burger image generation, PatinaAI for 3d PBR textures, Blender for 3d modelling
 
-##Considerations on choice of hosting
+## Considerations on choice of hosting
+
 Vercel or Netlify or any cloud platforms are recommended as the react is a mostly static SPA. For backend, most of the cloud platorms also have pretty good free quotas and paid plans can guarantee better stability than an overcrowded cloud VPS where memory is mostly limited.
 Alternatively this can also be hosted as a static bucket in AWS S3, which can be very cheap to run.
 
-##Considerations on security, privacy and accesibility
+## Considerations on security, privacy and accesibility
+
 In case the data/information is membership only, a jwt token system can be implemented with the api backend, and token-refresh system can rotate the jwt every 30/60mins to protect unauthorized access to api
 For security, the website should be served under HTTPS only (as it's mostly default these days) and care should be given to sanitization of inputs/image upload (especially on the add burger form)
 For accesibility, proper aria labels and accesible tab navigation can be added. For lower end devices i would recommend disabling the 3d hero and show a standard image or a simple animated gif.
