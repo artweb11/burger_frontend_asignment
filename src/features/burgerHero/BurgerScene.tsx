@@ -138,16 +138,10 @@ const Lights = () => {
 
 const BurgerScene = () => {
   const controlsRef = useRef(null);
-  const { viewport } = useThree();
-  const isMobile = viewport.width < 768;
+  const isMobile = window.innerWidth < 768;
 
   return (
-    <Canvas
-      camera={{ position: [0, 190, 0], fov: 60 }}
-      aria-label="Interactive 3D burger model"
-      role="img"
-      frameloop="demand"
-    >
+    <Canvas camera={{ position: [0, 190, 0], fov: 60 }}>
       <color attach="background" args={["#000000"]} />
       {/* <ambientLight intensity={0.1} /> */}
       {/* <directionalLight position={[0, 0, 20]} intensity={1.404} /> */}
